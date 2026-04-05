@@ -3398,12 +3398,7 @@ const CLAUDE_MODEL = 'claude-sonnet-4-20250514';
 // 部署後把下面這行換成你的 Cloudflare Worker 網址
 // 例如：'https://podnote-api.你的帳號.workers.dev'
 // 本機開發或在 claude.ai 預覽時保留原本的 Anthropic URL
-const CLAUDE_URL = (
-  window.location.hostname === 'localhost' ||
-  window.location.hostname === '' ||
-  window.location.hostname.endsWith('.claude.ai')
-) ? 'https://api.anthropic.com/v1/messages'
-  : 'https://podnote-api.YOUR_ACCOUNT.workers.dev'; // ← 部署後改這裡
+const CLAUDE_URL = 'https://podnote-proxy.你的帳號.workers.dev';
 
 async function callGemini(prompt, maxTokens = 1000){
   // 函式名保留 callGemini，未來換 Gemini 時只需改這裡
